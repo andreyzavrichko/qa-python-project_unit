@@ -10,13 +10,14 @@ BUN_PARAMS = [
 ]
 
 
-@pytest.mark.parametrize("name, price", BUN_PARAMS)
-def test_get_name(name, price):
-    bun = Bun(name, price)
-    assert bun.get_name() == name
+class TestBun:
 
+    @pytest.mark.parametrize("name, price", BUN_PARAMS)
+    def test_get_name(self, name, price):
+        bun = Bun(name, price)
+        assert bun.get_name() == name
 
-@pytest.mark.parametrize("name, price", BUN_PARAMS)
-def test_get_price(name, price):
-    bun = Bun(name, price)
-    assert bun.get_price() == price
+    @pytest.mark.parametrize("name, price", BUN_PARAMS)
+    def test_get_price(self, name, price):
+        bun = Bun(name, price)
+        assert bun.get_price() == price
